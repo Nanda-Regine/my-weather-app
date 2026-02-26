@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MoodCast</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="app" id="app">
+
+    <!-- Search -->
+    <div class="search-container">
+      <input type="text" id="city-input" placeholder="Enter a city..." />
+      <button onclick="searchCity()">Search</button>
+    </div>
+
+    <!-- Mood Poem Line -->
+    <p class="poem" id="poem-line"></p>
+
+    <!-- Weather Card -->
+    <div class="card" id="weather-card">
+      <h1 id="city-name"></h1>
+      <p id="mood-label"></p>
+      <div class="temp-row">
+        <span id="temp"></span>
+        <span id="weather-desc"></span>
+      </div>
+      <div class="details">
+        <span id="humidity"></span>
+        <span id="wind"></span>
+      </div>
+    </div>
+
+    <!-- Mood Suggestions -->
+    <div class="suggestions" id="suggestions">
+      <div class="suggestion-block">
+        <h3>🍽️ Eat</h3>
+        <p id="food-suggestion"></p>
+      </div>
+      <div class="suggestion-block">
+        <h3>👗 Wear</h3>
+        <p id="outfit-suggestion"></p>
+      </div>
+      <div class="suggestion-block">
+        <h3>💬 Remember</h3>
+        <p id="affirmation"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
