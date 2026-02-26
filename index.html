@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <!-- Full-screen particle layer -->
+  <!-- Full-screen particle layer (stars, rain, snow, etc.) -->
   <div id="particles" class="particles-layer"></div>
 
   <div class="app" id="app">
@@ -20,7 +20,9 @@
       <div class="search-container">
         <input type="text" id="city-input" placeholder="Enter a city…" autocomplete="off"/>
         <button onclick="searchCity()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
         </button>
       </div>
     </div>
@@ -28,7 +30,7 @@
     <!-- Animated Weather Icon -->
     <div class="icon-wrap" id="icon-wrap"></div>
 
-    <!-- Rotating Quote -->
+    <!-- Rotating Poem / Quote -->
     <p class="poem" id="poem-line">The sky holds stories. Ask it one.</p>
 
     <!-- Weather Card -->
@@ -50,7 +52,7 @@
       </div>
     </div>
 
-    <!-- Mood Suggestions -->
+    <!-- Mood Suggestions — all three rotate independently -->
     <div class="suggestions" id="suggestions">
       <div class="suggestion-block">
         <h3>🍽️ Eat</h3>
@@ -70,6 +72,98 @@
       Built by <a href="#">Nandawula Kabali-Kagwa</a> · MoodCast 2026
     </footer>
 
+  </div>
+
+  <!-- African Landscape Silhouette — fixed at bottom -->
+  <div class="landscape-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220" class="landscape-svg" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="skyFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="rgba(6,3,1,0)"/>
+          <stop offset="55%"  stop-color="rgba(6,3,1,0.55)"/>
+          <stop offset="100%" stop-color="rgba(4,2,0,1)"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Sky fade overlay (so silhouette blends with background) -->
+      <rect width="1440" height="220" fill="url(#skyFade)"/>
+
+      <!-- Layer 1: Distant mountain range -->
+      <path d="M0,220 L0,155 L80,118 L140,135 L200,105 L270,125 L340,88 L420,115 L500,78 L580,105 L660,68 L740,95 L820,62 L910,92 L990,58 L1080,88 L1160,55 L1250,90 L1340,65 L1400,88 L1440,78 L1440,220 Z"
+            fill="rgba(8,4,1,0.65)"/>
+
+      <!-- Layer 2: Rolling mid hills -->
+      <path d="M0,220 L0,188 Q120,170 260,184 Q400,198 540,178 Q660,160 800,180 Q940,200 1080,180 Q1200,163 1330,185 Q1400,196 1440,190 L1440,220 Z"
+            fill="rgba(6,3,0,0.82)"/>
+
+      <!-- BAOBAB TREE — left side -->
+      <!-- Trunk: fat and slightly tapered -->
+      <path d="M105,220 Q103,190 100,162 Q108,154 116,162 Q113,190 111,220 Z"
+            fill="rgba(4,2,0,0.97)"/>
+      <!-- Crown: layered ellipses for that iconic baobab puff -->
+      <ellipse cx="108" cy="152" rx="50" ry="28"  fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="76"  cy="162" rx="28" ry="18"  fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="140" cy="160" rx="26" ry="17"  fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="88"  cy="138" rx="24" ry="15"  fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="128" cy="136" rx="22" ry="14"  fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="108" cy="128" rx="20" ry="13"  fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="96"  cy="118" rx="15" ry="10"  fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="120" cy="116" rx="14" ry="9"   fill="rgba(4,2,0,0.97)"/>
+
+      <!-- ACACIA TREE — right side, flat-topped -->
+      <!-- Trunk: tall and slender -->
+      <rect x="1308" y="152" width="8" height="68" fill="rgba(4,2,0,0.97)" rx="3"/>
+      <!-- Main flat canopy -->
+      <ellipse cx="1312" cy="148" rx="64"  ry="17" fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="1290" cy="154" rx="40"  ry="12" fill="rgba(4,2,0,0.97)"/>
+      <ellipse cx="1334" cy="153" rx="38"  ry="11" fill="rgba(4,2,0,0.97)"/>
+      <!-- Spreading branches -->
+      <path d="M1312,152 L1256,143" stroke="rgba(4,2,0,0.97)" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <path d="M1312,152 L1370,143" stroke="rgba(4,2,0,0.97)" stroke-width="5" stroke-linecap="round" fill="none"/>
+      <path d="M1312,152 L1294,134" stroke="rgba(4,2,0,0.97)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M1312,152 L1330,134" stroke="rgba(4,2,0,0.97)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+      <!-- SMALL ACACIA — mid right -->
+      <rect x="896" y="168" width="5" height="45" fill="rgba(4,2,0,0.88)" rx="2"/>
+      <ellipse cx="898" cy="165" rx="40"  ry="11" fill="rgba(4,2,0,0.88)"/>
+      <ellipse cx="878" cy="170" rx="25"  ry="8"  fill="rgba(4,2,0,0.88)"/>
+      <ellipse cx="918" cy="169" rx="23"  ry="7"  fill="rgba(4,2,0,0.88)"/>
+      <path d="M898,168 L864,160" stroke="rgba(4,2,0,0.88)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M898,168 L932,160" stroke="rgba(4,2,0,0.88)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+
+      <!-- SMALL BAOBAB — mid left -->
+      <path d="M372,220 Q370,200 368,180 Q374,174 380,180 Q378,200 376,220 Z"
+            fill="rgba(4,2,0,0.88)"/>
+      <ellipse cx="374" cy="172" rx="32" ry="18" fill="rgba(4,2,0,0.88)"/>
+      <ellipse cx="352" cy="180" rx="18" ry="12" fill="rgba(4,2,0,0.88)"/>
+      <ellipse cx="396" cy="178" rx="17" ry="11" fill="rgba(4,2,0,0.88)"/>
+      <ellipse cx="362" cy="162" rx="16" ry="10" fill="rgba(4,2,0,0.88)"/>
+      <ellipse cx="386" cy="160" rx="15" ry="9"  fill="rgba(4,2,0,0.88)"/>
+
+      <!-- Savanna grass — left cluster -->
+      <path d="M228,220 Q225,200 220,182" stroke="rgba(4,2,0,0.97)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M236,220 Q238,198 244,178" stroke="rgba(4,2,0,0.97)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M244,220 Q241,202 238,184" stroke="rgba(4,2,0,0.97)" stroke-width="2"   fill="none" stroke-linecap="round"/>
+      <path d="M252,220 Q255,200 260,180" stroke="rgba(4,2,0,0.97)" stroke-width="2"   fill="none" stroke-linecap="round"/>
+      <path d="M260,220 Q258,204 254,188" stroke="rgba(4,2,0,0.97)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- Savanna grass — right cluster -->
+      <path d="M1164,220 Q1161,200 1156,182" stroke="rgba(4,2,0,0.97)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M1172,220 Q1174,198 1180,178" stroke="rgba(4,2,0,0.97)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M1180,220 Q1177,202 1174,184" stroke="rgba(4,2,0,0.97)" stroke-width="2"   fill="none" stroke-linecap="round"/>
+      <path d="M1188,220 Q1191,200 1196,180" stroke="rgba(4,2,0,0.97)" stroke-width="2"   fill="none" stroke-linecap="round"/>
+      <path d="M1196,220 Q1194,204 1190,188" stroke="rgba(4,2,0,0.97)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+
+      <!-- Savanna grass — mid scatter -->
+      <path d="M610,220 Q607,204 604,190" stroke="rgba(4,2,0,0.9)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M618,220 Q620,202 626,186" stroke="rgba(4,2,0,0.9)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M1040,220 Q1037,204 1033,190" stroke="rgba(4,2,0,0.9)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M1048,220 Q1051,202 1056,186" stroke="rgba(4,2,0,0.9)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+      <!-- Ground line -->
+      <path d="M0,220 L0,208 Q360,198 720,208 Q1080,218 1440,204 L1440,220 Z"
+            fill="rgba(4,2,0,1)"/>
+    </svg>
   </div>
 
   <script src="app.js"></script>
