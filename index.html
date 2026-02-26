@@ -5,28 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MoodCast</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
+  <!-- Full-screen particle layer -->
+  <div id="particles" class="particles-layer"></div>
+
   <div class="app" id="app">
 
-    <!-- Search -->
-    <div class="search-container">
-      <input type="text" id="city-input" placeholder="Enter a city..." />
-      <button onclick="searchCity()">Search</button>
+    <!-- Header -->
+    <div class="app-header">
+      <span class="brand">MoodCast</span>
+      <div class="search-container">
+        <input type="text" id="city-input" placeholder="Enter a city…" autocomplete="off"/>
+        <button onclick="searchCity()">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Mood Poem Line -->
-    <p class="poem" id="poem-line"></p>
+    <!-- Animated Weather Icon -->
+    <div class="icon-wrap" id="icon-wrap"></div>
+
+    <!-- Rotating Quote -->
+    <p class="poem" id="poem-line">The sky holds stories. Ask it one.</p>
 
     <!-- Weather Card -->
     <div class="card" id="weather-card">
-      <h1 id="city-name"></h1>
-      <p id="mood-label"></p>
+      <div class="card-location">
+        <h1 id="city-name"></h1>
+        <span id="mood-label"></span>
+      </div>
       <div class="temp-row">
         <span id="temp"></span>
-        <span id="weather-desc"></span>
+        <div class="temp-meta">
+          <span id="weather-desc"></span>
+          <span id="current-date"></span>
+        </div>
       </div>
       <div class="details">
         <span id="humidity"></span>
@@ -45,10 +61,14 @@
         <p id="outfit-suggestion"></p>
       </div>
       <div class="suggestion-block">
-        <h3>💬 Remember</h3>
+        <h3>✦ Remember</h3>
         <p id="affirmation"></p>
       </div>
     </div>
+
+    <footer class="app-footer">
+      Built by <a href="#">Nandawula Kabali-Kagwa</a> · MoodCast 2026
+    </footer>
 
   </div>
 
